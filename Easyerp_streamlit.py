@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from time import sleep
 from bs4 import BeautifulSoup
 import streamlit as st 
@@ -27,7 +28,10 @@ def get_attendence_page_html(
     chrome_options.add_argument("--disable-dev-shm-usage") 
 
     # Create the WebDriver instance
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(
+        options=chrome_options,
+        service=Service(ChromeDriverManager().install())
+    )
 
     # URLs
     login_url = "https://iimt.icloudems.com/corecampus/index.php"
