@@ -87,14 +87,12 @@ def main():
     st.title("Easy ERP")
     admission_id = st.number_input(
         "Admission number",
-        placeholder="example: 2123XXXX",
-        value=21231320
+        placeholder="example: 2123XXXX"
     )
 
     password = st.text_input(
         "ERP password",
-        placeholder="password ",
-        value="#Iimt23@Bxyz"
+        placeholder="password "
     )
 
     st.button(
